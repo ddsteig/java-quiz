@@ -1,113 +1,123 @@
-var div = document.querySelector(".card");
-var startBtn = document.querySelector(".btn");
-var jumboTron = document.querySelector(".jumbo1")
-
-
-// Quiz Questions & Answers.... possible object / array
-// Decide how many questions
-
-const trivia = [
-    {
-        question: "What does the fox say?",
-        answers: ["1", "2", "3", "4"], correctAnswer: 1
-    }
-
-]
-
-
-
-// Start button with a click event
 // Run quiz function
-
-
-startBtn.addEventListener("click", function () {
-    
-    updateDisplay();
-}
-);
-
 function startGame() {
-    
 
-}
+    let trivia = [
+        {
+            question: "What does the fox say?",
+            choice1: "Awoo",
+            choice2: "Bow wow",
+            choice3: "Meow",
+            correctAnswer: 1
+        },
+        {
+            question: "What does the owl say?",
+            choice1: "Woof",
+            choice2: "Hoot hoot",
+            choice3: "Rawr",
+            correctAnswer: 2
+        },
+        {
+            question: "What does the fish say?",
+            choice1: "Kaw kaw",
+            choice2: "Grrr",
+            choice3: "Gulp",
+            correctAnswer: 3
+        }
+    ]
 
-// Timed Quiz... function
+
+
+    let currentQuestion = {};
+    let questionCounter = 0;
+    let availableQuestions = [...trivia];
+    let score = 0;
+    let acceptingAnswers = false;
+    let choices = Array.from(document.getElementsByClassName("answer-text"));
+    let question = document.getElementById("questions");
+
+    let correctPoint = 5;
+
+    let secondsLeft = 60;
+
+    // Quiz Questions & Answers.... possible object / array
+    // Decide how many questions
+
+    getNextQuestion();
+
+    // Timed Quiz... function
     // Timer counts down
 
-var secondsLeft = 90;
+    function setTimer() {
 
-function setTimer() {
+        var countdown = setInterval(function () {
+            secondsLeft--;
+            timerElement.textContent = "Time: " + secondsLeft;
 
-    var countdown = setInterval(function () {
-        secondsLeft--;
-        timerElement.textContent = "Time: " + secondsLeft;
+            if (secondsLeft === 0 || questionNumber === questions.length) {
+                clearInterval(countdown);
+            }
+        }, 1000);
+    }
 
-        if (secondsLeft === 0 || questionNumber === questions.length) {
-            clearInterval(countdown);
-                   }
-    }, 1000);
+   
+    function getNextQuestion() {
+
+        if (availableQuestions.length === 0){
+            return;
+        }
+    
+        questionCounter++;
+
+        let questionIndex = Math.floor(Math.random() * availableQuestions.length);
+        currentQuestion = availableQuestions[questionIndex];
+        question.innerText = currentQuestion.question;
+
+        choices.forEach(choice => {
+            const number = choice.dataset["number"];
+            choice.innerText = currentQuestion["choice" + number];
+        });
+
+        availableQuestions.splice(questionIndex, 1);
+
+        acceptingAnswers = true;
+
+    };
+
+    // If question is answered wrong, return wrong, deduct time and move to next question
+    // Else return correct & move to next question
+    //Click event for answer buttons
+
+    choices.forEach(choice => {
+        choice.addEventListener("click", function (event) {
+            if (!acceptingAnswers) return;
+            console.log(event.target)
+
+            acceptingAnswers = false;
+            const selectedChoice = event.target;
+            const selectedAnswer = selectedChoice.dataset["number"];
+
+            console.log(selectedAnswer, currentQuestion.correctAnswer)
+
+            if (selectedAnswer == currentQuestion.correctAnswer){
+                keepScore(correctPoint);
+            }
+            console.log(score)
+            getNextQuestion();
+
+        });
+    });
+
+
+    function keepScore(num) {
+        score += num;
+
+    }
+
+
 }
 
-//Click event for answer buttons
-// If question is answered wrong, return wrong, deduct time and move to next question
-// Else return correct & move to next question
 //If timer is <=0 or questions left < 1 then end.
-
-let questionIndex = 0;
-
-
-function checkAnswer() {
-    // if {"answer"+userInput+keyCode+1().toLowerCase() === trivia[questionIndex].correctAnswer}
-    // then right else wrong
-
-}
-
-function getNextQuestion() {
-
-
-}
-
-// addEventListener
-
-function listenForAnswer() {
-    // call checkAnswer
-if (answer) {
-// Return Correct &
-getNextQuestion();    
-} else {
-    // Return Wrong, -5 seconds &
-    getNextQuestion();
-}
-}
-
-// Function that updates display in card via javascript
-
-function updateDisplay() {
-
-var jumboQuiz = document.createElement("div")
-jumboQuiz.className = "jumbotron quiz"
-
-var questionDiv = document.createElement("div")
-questionDiv.className = "questionDiv"
-var breakPoint = document.createElement("hr")
-var answerDiv = document.createElement("div")
-answerDiv.className = "answerDiv"
-
-
-var questionTxt = document.createTextNode("Question:")
-var answerTxt = document.createTextNode("Answer:")
-
-questionDiv.appendChild(questionTxt)
-answerDiv.appendChild(answerTxt)
-
-jumboQuiz.appendChild(questionDiv)
-jumboQuiz.appendChild(breakPoint)
-jumboQuiz.appendChild(answerDiv)
-jumboTron.replaceWith(jumboQuiz)
-
-}
 
 // Score... stylized box with input
 // Input for name + display score... prevent default possibly used here
 //High score display
-
