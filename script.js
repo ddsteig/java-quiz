@@ -71,7 +71,7 @@ function startGame() {
             question.innerText = ("GameOver");
             clear1.innerText = ("")
             clear2.innerText = ("")
-            clear3.innerText = ("")
+            clear3.innerText = ("Thanks for playing.")
             return;
         }
     
