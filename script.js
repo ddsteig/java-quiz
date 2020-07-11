@@ -1,6 +1,10 @@
 // Run quiz function
 function startGame() {
 
+    var clear1 = document.querySelector("#answer1");
+    var clear2 = document.querySelector("#answer2");
+    var clear3 = document.querySelector("#answer3");
+
     let trivia = [
         {
             question: "What does the fox say?",
@@ -63,6 +67,11 @@ function startGame() {
     function getNextQuestion() {
 
         if (availableQuestions.length === 0){
+            
+            question.innerText = ("GameOver");
+            clear1.innerText = ("")
+            clear2.innerText = ("")
+            clear3.innerText = ("")
             return;
         }
     
