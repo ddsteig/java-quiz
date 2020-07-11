@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <title>Quiz</title>
 </head>
@@ -11,23 +13,35 @@
 <body>
 
     <header>
-        <h1>Javascript Quiz</h1>
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-4">Javascript Quiz</h1>
+            </div>
+        </div>
     </header>
 
 
     <main>
-        
-            <div class="card">
+        <div class="container">
+            <div class="jumbotron jumbo1">
 
+                <p class="lead">Take a timed quiz about Javascript, and see if you can beat your previous scores!</p>
+                <hr class="my-4">
+                <p>Click Start to begin!</p>
+                <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
             </div>
-        
+        </div>
     </main>
 
 
     <footer>
-        By Danny Steiger
+        <div class="container">
+            <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-6">By Danny Steiger</h1>
+            </div>
+        </div>
     </footer>
-
+    <script src="./script.js"></script>
 </body>
 
 </html>
