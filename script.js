@@ -1,6 +1,7 @@
 // Run quiz function
 function startGame() {
 
+
     var clear1 = document.querySelector("#answer1");
     var clear2 = document.querySelector("#answer2");
     var clear3 = document.querySelector("#answer3");
@@ -38,7 +39,7 @@ function startGame() {
     let acceptingAnswers = false;
     let choices = Array.from(document.getElementsByClassName("answer-text"));
     let question = document.getElementById("questions");
-
+    var timer = document.getElementById("time");
     let correctPoint = 5;
 
     let secondsLeft = 60;
@@ -51,30 +52,18 @@ function startGame() {
     // Timed Quiz... function
     // Timer counts down
 
-    function setTimer() {
 
-        var countdown = setInterval(function () {
-            secondsLeft--;
-            timerElement.textContent = "Time: " + secondsLeft;
 
-            if (secondsLeft === 0 || questionNumber === questions.length) {
-                clearInterval(countdown);
-            }
-        }, 1000);
-    }
-
-   
     function getNextQuestion() {
 
-        if (availableQuestions.length === 0){
-            
+        if (availableQuestions.length === 0) {
             question.innerText = ("GameOver");
             clear1.innerText = ("")
             clear2.innerText = ("")
             clear3.innerText = ("Thanks for playing.")
             return;
         }
-    
+
         questionCounter++;
 
         let questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -92,6 +81,7 @@ function startGame() {
 
     };
 
+
     // If question is answered wrong, return wrong, deduct time and move to next question
     // Else return correct & move to next question
     //Click event for answer buttons
@@ -107,23 +97,41 @@ function startGame() {
 
             console.log(selectedAnswer, currentQuestion.correctAnswer)
 
-            if (selectedAnswer == currentQuestion.correctAnswer){
+            if (selectedAnswer == currentQuestion.correctAnswer) {
                 keepScore(correctPoint);
             }
             console.log(score)
             getNextQuestion();
-
         });
     });
 
-
     function keepScore(num) {
         score += num;
-
     }
+
+    function startTimer() {
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timer.textContent = `Time Remaining: ${secondsLeft}`;
+            if (secondsLeft === 0) {
+                clearInterval(timerInterval);
+                timer.textContent = ("Time's up!")
+                question.innerText = ("GameOver");
+                clear1.innerText = ("")
+                clear2.innerText = ("")
+                clear3.innerText = ("Thanks for playing.")
+            }
+            else if (availableQuestions.length === 0) {
+
+                clearInterval(timerInterval)
+            }
+        }, 1000);
+    }
+    startTimer();
 
 
 }
+
 
 //If timer is <=0 or questions left < 1 then end.
 

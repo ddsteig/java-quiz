@@ -16,7 +16,7 @@ function updateDisplay() {
     jumboQuiz.className = "jumbotron quiz"
 
     var questionDiv = document.createElement("div")
-    questionDiv.className = "questionDiv"
+    questionDiv.className = "question-div"
     questionDiv.setAttribute("id", "questions")
 
 
@@ -24,7 +24,7 @@ function updateDisplay() {
 
 
     var answerDiv = document.createElement("div")
-    answerDiv.className = "answerDiv"
+    answerDiv.className = "answer-div"
     answerDiv.setAttribute("id", "answers")
 
 
@@ -37,12 +37,7 @@ function updateDisplay() {
     answerDiv.innerHTML += "<br>"
 
     var timeRemaning = document.createElement("div")
-    timeRemaning.setAttribute("id", "timeRemaining")
-
-    var timeTxt = document.createTextNode("Time Remaining: ")
-
-
-    timeRemaning.appendChild(timeTxt)
+    timeRemaning.setAttribute("id", "time")
 
     jumboQuiz.appendChild(questionDiv)
     jumboQuiz.appendChild(answerDiv)
@@ -52,4 +47,5 @@ function updateDisplay() {
     jumboTron.replaceWith(jumboQuiz)
 
     startGame();
+    startTimer();
 }
