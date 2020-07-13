@@ -29,11 +29,11 @@ function updateDisplay() {
 
 
     answerDiv.innerHTML += "<br>"
-    answerDiv.innerHTML += "<div class='answer-text btn' data-number='1' id='answer1'>"
+    answerDiv.innerHTML += "<div class='answer-text btn' data-number='1'>"
     answerDiv.innerHTML += "<br>"
-    answerDiv.innerHTML += "<div class='answer-text btn' data-number='2' id='answer2'>"
+    answerDiv.innerHTML += "<div class='answer-text btn' data-number='2'>"
     answerDiv.innerHTML += "<br>"
-    answerDiv.innerHTML += "<div class='answer-text btn' data-number='3' id='answer3'>"
+    answerDiv.innerHTML += "<div class='answer-text btn' data-number='3'>"
     answerDiv.innerHTML += "<br>"
 
     var timeRemaning = document.createElement("div")
@@ -47,5 +47,5 @@ function updateDisplay() {
     jumboTron.replaceWith(jumboQuiz)
 
     startGame();
-    startTimer();
+   
 }

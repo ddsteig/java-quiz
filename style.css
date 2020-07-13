@@ -3,7 +3,25 @@ h1 {
     padding-right: 25%;
 }
 
+.jumbo1{
+    font-weight: bold;
+}
+
 .question-div{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.answer-text{
+    width: 100px;
+    height: 60px;
+    padding: 2% 0 1% 0;
+    background-color: lightskyblue;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+
+#time{
     font-weight: bold;
 }
 

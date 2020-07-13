@@ -99,7 +99,10 @@ function startGame() {
 
             if (selectedAnswer == currentQuestion.correctAnswer) {
                 keepScore(correctPoint);
+            }else {
+                secondsLeft = secondsLeft - 5;
             }
+
             console.log(score)
             getNextQuestion();
         });
@@ -112,7 +115,7 @@ function startGame() {
     function startTimer() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
-            timer.textContent = `Time Remaining: ${secondsLeft}`;
+            timer.textContent = "Time Remaining: " + secondsLeft;
             if (secondsLeft === 0) {
                 clearInterval(timerInterval);
                 timer.textContent = ("Time's up!")
@@ -125,6 +128,11 @@ function startGame() {
 
                 clearInterval(timerInterval)
             }
+
+            if (selectedAnswer == false){
+                secondsLeft = secondsLeft - 5;
+            }return secondsLeft;
+
         }, 1000);
     }
     startTimer();
