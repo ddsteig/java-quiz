@@ -39,10 +39,9 @@ A Javascript quiz that does the following:
      <li>Building, sorting, splicing, the high score array</li>
      <li> <a href="https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript">
        https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript</a></li>
-      <li>
-  </ol>
+     </ol>
   <li>Quiz utilizies two javascript files.</li>
-  <li>Is mobile responsive.<li>
+  <li>Is mobile responsive.</li>
 </ul>
 <br>
 
