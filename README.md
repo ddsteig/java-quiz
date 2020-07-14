@@ -8,7 +8,7 @@ A Javascript quiz that does the following:
   <li>Starts by a click event</li>
   <li>Has a timer</li>
   <li>Updates html via the javascript</li>
-  <li>Displays questions and answer</li>
+  <li>Displays a question and answer options</li>
   <li>Displays next question after answered</li>
     <ul>
       <li>If right adds to score and continues to next question</li>
