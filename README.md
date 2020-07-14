@@ -11,8 +11,8 @@ A Javascript quiz that does the following:
   <li>Displays a question and answer options</li>
   <li>Displays next question after answered</li>
     <ul>
-      <li>If right adds to score and continues to next question</li>
-      <li>If wrong subtracts time and continues to next question</li>
+      <li>If right, adds to score and continues to next question</li>
+      <li>If wrong, subtracts time and continues to next question</li>
     </ul>
   <li>Quiz ends when timer reaches 0 or all questions answered</li>
     <ul>
