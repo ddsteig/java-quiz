@@ -12,6 +12,8 @@
 
 <body>
 
+    <!-- Header for page, used jumbotrons for style through page. -->
+
     <header>
         <div class="container">
             <div class="jumbotron jumbotron-fluid">
@@ -21,6 +23,9 @@
     </header>
 
     <main>
+
+        <!-- This section is used for the actual quiz, updated greatly via javascript. -->
+
         <div class="container">
             <div class="jumbotron jumbo1">
                 <h3> Take a timed quiz about Javascript, and see if you can beat your previous scores!</h3>
@@ -29,25 +34,30 @@
                 <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
             </div>
         </div>
-    </main>
 
-    <div class="container highscore">
-        <div class="jumbotron jumbotron-fluid">
-            <h1 class="display-6">High Score</h1>
-            <div id="highscore"></div>
-            <br>
-            <div>
-                <input type="text" id="name" placeholder="Enter Name">
-            </div>
-            <br>
-            <div>
-                <a class="btn btn-primary btn-lg" href="#" role="button" id="savescore">Save Score</a>
-                <a class="btn btn-primary btn-lg" href="#" role="button" id="getscore">Get Scores</a>
-                <a class="btn btn-primary btn-lg" href="#" role="button" id="requiz">Try Again</a>
+        <!-- This section is used for the highscore. -->
+
+        <div class="container highscore" style="display:none">
+            <div class="jumbotron jumbotron-fluid">
+                <h1 class="display-6">High Score</h1>
+                <br>
+                <div id="highscore"></div>
+                <br>
+                <div>
+                    <input type="text" id="name" placeholder="Enter Name">
+                </div>
+                <br>
+                <div>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" id="savescore">Save Score</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" id="getscore">Get Scores</a>
+                    <a class="btn btn-primary btn-lg" href="#" role="button" id="requiz">Try Again</a>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
+    <!-- Footer for the page. -->
+    
     <footer>
         <div class="container">
             <div class="jumbotron jumbotron-fluid">

@@ -78,22 +78,23 @@ function startGame() {
     let acceptingAnswers = false;
     let choices = Array.from(document.getElementsByClassName("answer-text"));
     let question = document.getElementById("questions");
-    var timer = document.getElementById("time");
+    let timer = document.getElementById("time");
     let correctPoint = 5;
-    let secondsLeft = 60;
+    let secondsLeft = 50;
 
     // getNextQuestion function randomly pulls the questions out of the array.
-    // If the array length of avaiable questions hits 0 then the quiz ends.
-    // It also splices out the randomly pulled question so it isn't used again.
-    // Used 'data' for answers to display.
+        // If the array length of avaiable questions hits 0 then the quiz ends.
+        // It also splices out the randomly pulled question so it isn't used again.
+        // Used 'data' for answers to display.
 
     function getNextQuestion() {
 
         if (availableQuestions.length === 0) {
             question.innerText = ("GameOver");
-            clear1.innerText = ("Final Score:")
-            clear2.innerText = (score)
-            clear3.innerText = ("Thanks for playing.")
+            clear1.innerText = ("Final Score:");
+            clear2.innerText = (score);
+            clear3.innerText = ("Thanks for playing.");
+            hsdisplay.style.display = "";
             return;
         }
 
@@ -145,7 +146,7 @@ function startGame() {
     // A running score is kept during the quiz, to be displayed and saved later.
 
     function keepScore(num) {
-        score += num;
+        score += num
         localStorage.setItem("stashScore", score)
     }
 
@@ -156,13 +157,14 @@ function startGame() {
         var timerInterval = setInterval(function () {
             secondsLeft--;
             timer.textContent = "Time Remaining: " + secondsLeft;
-            if (secondsLeft === 0) {
+            if (secondsLeft <= 1) {
                 clearInterval(timerInterval);
                 timer.textContent = ("Time's up!")
                 question.innerText = ("GameOver");
-                clear1.innerText = ("")
-                clear2.innerText = ("")
-                clear3.innerText = ("Thanks for playing.")
+                clear1.innerText = ("Final Score:");
+                clear2.innerText = (score);
+                clear3.innerText = ("Thanks for playing.");
+                hsdisplay.style.display = "";
             }
             else if (availableQuestions.length === 0) {
 
@@ -172,6 +174,7 @@ function startGame() {
         }, 1000);
     }
     startTimer();
+
 }
 
 // Was able to use localStorage to save the score and then pull it out for use in the High score functions so they did not have to also be nested.
@@ -184,6 +187,7 @@ var getScore = document.getElementById("getscore");
 var saveScore = document.getElementById("savescore");
 var highScoreArray = [];
 var tryAgain = document.getElementById("requiz");
+let hsdisplay = document.querySelector(".highscore")
 
 // Keyup function captures the name entered.
 
@@ -237,6 +241,7 @@ getScore.addEventListener("click", function () {
 
 tryAgain.addEventListener("click", function (event) {
     event.preventDefault();
+    hsdisplay.style.display = "none";
     updateDisplay();
 })
 

@@ -1,17 +1,21 @@
+/* Used for the header, high score, and footer. */
 h1 {
     padding-left: 25%;
     padding-right: 25%;
 }
 
+/* Text inside the original jumbotron. */
 .jumbo1{
     font-weight: bold;
 }
 
+/* Text for the questions of the quiz. */
 .question-div{
     font-weight: bold;
     font-size: 30px;
 }
 
+/* Text for the answers of the quiz. */
 .answer-text{
     width: 200px;
     height: 60px;
@@ -21,15 +25,17 @@ h1 {
     font-weight: bold;
 }
 
+/* Used for time remaining. */
 #time{
     font-weight: bold;
 }
 
+/* Centers all items withing the highscore div. */
 .highscore{
     text-align: center;
 }
 
-
+/* Used for high score and footer titles. */
 .display-6 {
 font-size: 25px;
 }
