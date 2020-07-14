@@ -7,8 +7,8 @@ A Javascript quiz that does the following:
   <ul>
   <li>Starts by a click event</li>
   <li>Has a timer</li>
-  <li>Updates html via the javascrip.</li>
-  <li>Displays questions and answer.</li>
+  <li>Updates html via the javascript</li>
+  <li>Displays questions and answer</li>
   <li>Displays next question after answered</li>
     <ul>
       <li>If right adds to score and continues to next question</li>
@@ -49,7 +49,7 @@ A Javascript quiz that does the following:
  
   <h2>Known Issues</h2>
  <ul>
-  <li>Due to how the quiz was started, there are many nested functions.<li>
-  <li>High score section was able to be unnested by using localstorage with the score variable.<li>
-  <li>If time runs out and user has not selected any answers, saving the score, uses the previous scores value.<li>
+  <li>Due to how the quiz was started, there are many nested functions.</li>
+  <li>High score section was able to be unnested by using localstorage with the score variable.</li>
+  <li>If time runs out and user has not selected any answers, saving the score, uses the previous scores value.</li>
  </ul>
