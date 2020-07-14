@@ -36,7 +36,7 @@ A Javascript quiz that does the following:
      <li>Randomizing the question array</li>
      <li>Displaying the questions and answers</li>
      <li>Selecting answers & checking answers</li>
-     <li>Building, sorting, splicing, the high score array</li>
+     <li>Building, sorting, and splicing, the high score array</li>
      <li> <a href="https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript" target="_blank">
        https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript</a></li>
      </ol>
