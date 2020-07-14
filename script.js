@@ -146,6 +146,7 @@ function startGame() {
     // A running score is kept during the quiz, to be displayed and saved later.
 
     function keepScore(num) {
+
         score += num
         localStorage.setItem("stashScore", score)
     }
@@ -174,7 +175,6 @@ function startGame() {
         }, 1000);
     }
     startTimer();
-
 }
 
 // Was able to use localStorage to save the score and then pull it out for use in the High score functions so they did not have to also be nested.
