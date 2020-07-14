@@ -5,22 +5,22 @@
 A Javascript quiz that does the following:
 
   <ul>
-  <li>Starts by a click event</li>
-  <li>Has a timer</li>
-  <li>Updates html via the javascript</li>
-  <li>Displays a question and answer options</li>
-  <li>Displays next question after answered</li>
+  <li>Starts by a click event.</li>
+  <li>Has a timer.</li>
+  <li>Updates html via the javascrip.t</li>
+  <li>Displays a question and answer options.</li>
+  <li>Displays next question after answered.</li>
     <ul>
-      <li>If right, adds to score and continues to next question</li>
-      <li>If wrong, subtracts time and continues to next question</li>
+      <li>If right, adds to score and continues to next question<./li>
+      <li>If wrong, subtracts time and continues to next question.</li>
     </ul>
-  <li>Quiz ends when timer reaches 0 or all questions answered</li>
+  <li>Quiz ends when timer reaches 0 or all questions answered.</li>
     <ul>
-    <li>High score box appears</li>
-    <li>User can enter name</li>
-    <li>User can save name & score</li>
-    <li>User can get list of high scores</li>
-    <li>User can restart the quiz</li>
+    <li>High score box appears.</li>
+    <li>User can enter name.</li>
+    <li>User can save name & score.</li>
+    <li>User can get list of high scores.</li>
+    <li>User can restart the quiz.</li>
     </ul>
   </ul>
  <br>
@@ -32,16 +32,16 @@ A Javascript quiz that does the following:
   <li>This page utilizes bootstrap and has some basic css.</li>
   <li>Utilizes James Quick's youtube tutorials for:</li>
     <ol>
-     <li>Randomizing the question array</li>
-     <li>Displaying the questions and answers</li>
-     <li>Selecting answers & checking answers</li>
-     <li>Building, sorting, and splicing, the high score array</li>
+     <li>Randomizing the question array.</li>
+     <li>Displaying the questions and answers.</li>
+     <li>Selecting answers & checking answers.</li>
+     <li>Building, sorting, and splicing, the high score array.</li>
      <li> <a href="https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript" target="_blank">
        https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript</a></li>
      </ol>
   <li>Quiz utilizies two javascript files.</li>
   <li>Is mobile responsive.</li>
-  <li>Has a highscore display that remains hidden until quiz is ended</li>
+  <li>Has a highscore display that remains hidden until quiz is ended.</li>
 </ul>
 <br>
 
