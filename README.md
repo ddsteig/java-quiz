@@ -30,7 +30,6 @@ A Javascript quiz that does the following:
   <h2>Other Info</h2>
 <ul>
   <li>This page utilizes bootstrap and has some basic css.</li>
-  <li>Quiz game is updated dynamically from the javscript.</li>
   <li>Utilizes James Quick's youtube tutorials for:</li>
     <ol>
      <li>Randomizing the question array</li>
