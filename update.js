@@ -1,17 +1,23 @@
+
+// Variables for grabbing classes from the html for the start button and jumbotron.
+
 var startBtn = document.querySelector(".btn");
 var jumboTron = document.querySelector(".jumbo1");
 
-// Start button with a click event
+// Start button with a click event that updates the jumbotron display where the star button is.
+
 startBtn.addEventListener("click", function () {
 
     updateDisplay();
-
 }
 );
 
-// Function that updates display when game starts
+// Function that updates display when game starts. Also calls the start game function.
+    // This function adds divs for questions and answers, replacing the start button area.
+    // Also creates a div for time remaining updateDisplay.
+
 function updateDisplay() {
-    
+
     var jumboQuiz = document.createElement("div")
     jumboQuiz.className = "jumbotron quiz"
 
@@ -46,6 +52,8 @@ function updateDisplay() {
 
     jumboTron.replaceWith(jumboQuiz)
 
+    // startGame Functtion in a separate javascript file.
+
     startGame();
-   
+
 }
