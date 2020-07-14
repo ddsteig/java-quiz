@@ -42,6 +42,7 @@ A Javascript quiz that does the following:
      </ol>
   <li>Quiz utilizies two javascript files.</li>
   <li>Is mobile responsive.</li>
+  <li>Has a highscore display that remains hidden until quiz is ended</li>
 </ul>
 <br>
 
