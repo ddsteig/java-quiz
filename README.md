@@ -7,7 +7,7 @@ A Javascript quiz that does the following:
   <ul>
   <li>Starts by a click event.</li>
   <li>Has a timer.</li>
-  <li>Updates html via the javascrip.t</li>
+  <li>Updates html via the javascript.</li>
   <li>Displays a question and answer options.</li>
   <li>Displays next question after answered.</li>
     <ul>
