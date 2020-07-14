@@ -1,6 +1,6 @@
 // Run quiz function
 function startGame() {
-
+    event.preventDefault();
 
     var clear1 = document.querySelector("#answer1");
     var clear2 = document.querySelector("#answer2");
@@ -8,25 +8,60 @@ function startGame() {
 
     let trivia = [
         {
-            question: "What does the fox say?",
-            choice1: "Awoo",
-            choice2: "Bow wow",
-            choice3: "Meow",
+            question: "How do you write 'Hello World' in an alert box?",
+            choice1: "alert('Hello World');",
+            choice2: "msg('Hello World');",
+            choice3: "alertBox('Hello World');",
             correctAnswer: 1
         },
         {
-            question: "What does the owl say?",
-            choice1: "Woof",
-            choice2: "Hoot hoot",
-            choice3: "Rawr",
+            question: "Inside which HTML element do we put the JavaScript??",
+            choice1: "<javascript>",
+            choice2: "<script>",
+            choice3: "<js>",
             correctAnswer: 2
         },
         {
-            question: "What does the fish say?",
-            choice1: "Kaw kaw",
-            choice2: "Grrr",
-            choice3: "Gulp",
+            question: "Which of the following function of String object would compare a regular expression with a string?",
+            choice1: "concat()",
+            choice2: "search()",
+            choice3: "match()",
             correctAnswer: 3
+        },
+        {
+            question: "What is the function of Array object that adds and/or removes elements from an array?",
+            choice1: "splice()",
+            choice2: "sort()",
+            choice3: "unshift()",
+            correctAnswer: 1
+        },
+        {
+            question: "What is the function of Array object that runs through each element of the array?",
+            choice1: "filter()",
+            choice2: "forEach()",
+            choice3: "every()",
+            correctAnswer: 2
+        },
+        {
+            question: "Which of the following will return the type of the arguments passed to a function?",
+            choice1: "None",
+            choice2: "using getType function",
+            choice3: "using typeof operator",
+            correctAnswer: 3
+        },
+        {
+            question: "Which of the following function of String object produces an HTML hypertext link for requesting another URL?",
+            choice1: "link()",
+            choice2: "sub()",
+            choice3: "push()",
+            correctAnswer: 1
+        },
+        {
+            question: "Which of the following function of String object returns the capitalized string while respecting the current locale?",
+            choice1: "toUpperCase()",
+            choice2: "toLocaleUpperCase()",
+            choice3: "toString()",
+            correctAnswer: 2
         }
     ]
 
@@ -51,15 +86,15 @@ function startGame() {
 
     // Timed Quiz... function
     // Timer counts down
-
+    //  If timer is <=0 or questions left < 1 then end.
 
 
     function getNextQuestion() {
 
         if (availableQuestions.length === 0) {
             question.innerText = ("GameOver");
-            clear1.innerText = ("")
-            clear2.innerText = ("")
+            clear1.innerText = ("Final Score:")
+            clear2.innerText = (score)
             clear3.innerText = ("Thanks for playing.")
             return;
         }
@@ -99,7 +134,7 @@ function startGame() {
 
             if (selectedAnswer == currentQuestion.correctAnswer) {
                 keepScore(correctPoint);
-            }else {
+            } else {
                 secondsLeft = secondsLeft - 5;
             }
 
@@ -110,6 +145,7 @@ function startGame() {
 
     function keepScore(num) {
         score += num;
+        localStorage.setItem("stashScore", score)
     }
 
     function startTimer() {
@@ -129,20 +165,68 @@ function startGame() {
                 clearInterval(timerInterval)
             }
 
-            if (selectedAnswer == false){
-                secondsLeft = secondsLeft - 5;
-            }return secondsLeft;
-
         }, 1000);
     }
     startTimer();
 
+    // Score... stylized box with input
+    // Input for name + display score... prevent default possibly used here
+    //High score display
 
 }
 
+var savedScore = document.getElementById("highscore");
+var getScore = document.getElementById("getscore");
+var saveScore = document.getElementById("savescore");
 
-//If timer is <=0 or questions left < 1 then end.
+addEventListener("keyup", function () {
 
-// Score... stylized box with input
-// Input for name + display score... prevent default possibly used here
-//High score display
+    myName = document.getElementById("name").value;
+});
+
+var highScoreArray = [];
+saveScore.addEventListener("click", function (event) {
+    event.preventDefault
+
+    var stashScore = localStorage.getItem("stashScore")
+    var scoreArray = {
+        name: myName,
+        score: stashScore
+    }
+
+    highScoreArray.push(scoreArray)
+    highScoreArray.sort(function (a, b) {
+        return b.score - a.score
+    });
+
+    highScoreArray.splice(5)
+
+    localStorage.setItem("highScore", JSON.stringify(highScoreArray));
+
+});
+
+
+
+getScore.addEventListener("click", function () {
+    savedScore.innerText = "";
+    var highScore = JSON.parse(localStorage.getItem("highScore"));
+    console.log(highScore)
+
+    for (i = 0; i < highScore.length; i++) {
+        var scoreTxt = document.createElement("p");
+        scoreTxt.innerHTML = highScore[i].name + " " + highScore[i].score;
+        savedScore.appendChild(scoreTxt)
+
+    };
+});
+
+
+
+var tryAgain = document.getElementById("requiz");
+
+tryAgain.addEventListener("click", function () {
+    event.preventDefault();
+    updateDisplay();
+})
+
+
