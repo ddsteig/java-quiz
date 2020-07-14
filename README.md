@@ -50,7 +50,7 @@ A Javascript quiz that does the following:
  
   <h2>Known Issues</h2>
  <ul>
-  <li>Due to how the quiz was started, there are many nested functions.</li>
+  <li>Due to how the quiz was initially built, there are many nested functions.</li>
   <li>High score section was able to be unnested by using localstorage with the score variable.</li>
   <li>If time runs out and user has not selected any answers, saving the score, uses the previous scores value.</li>
  </ul>
