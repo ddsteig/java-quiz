@@ -249,6 +249,4 @@ tryAgain.addEventListener("click", function (event) {
     event.preventDefault();
     hsdisplay.style.display = "none";
     updateDisplay();
-})
-
-
+});
