@@ -201,12 +201,13 @@ addEventListener("keyup", function () {
     // Pushes the current object into the local storage object.
     // Also sorts by highest to lowest score and splices out more than 5 scores.
     // Strigifies the object and puts it in local Storage.
-
+var isSavedPressed = false;
 saveScore.addEventListener("click", function (event) {
     event.preventDefault
-
-    var stashScore = localStorage.getItem("stashScore")
-    var scoreArray = {
+    if (!isSavedPressed){
+        isSavedPressed = true;
+        var stashScore = localStorage.getItem("stashScore")
+        var scoreArray = {
         name: myName,
         score: stashScore
     }
@@ -219,6 +220,11 @@ saveScore.addEventListener("click", function (event) {
     highScoreArray.splice(5)
 
     localStorage.setItem("highScore", JSON.stringify(highScoreArray));
+    
+    }else {
+        return;
+    }
+    
 
 });
 

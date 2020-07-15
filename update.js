@@ -17,7 +17,9 @@ startBtn.addEventListener("click", function () {
     // Also creates a div for time remaining updateDisplay.
 
 function updateDisplay() {
- 
+    
+    isSavedPressed = false;
+
     var jumboQuiz = document.createElement("div")
     jumboQuiz.className = "jumbotron quiz"
 
